@@ -14,9 +14,12 @@ const db = require('./config/db');
 
 console.log("✅ MySQL pool initialized");
 
+const UserRoutes = require('./config/models/controllers/routes/UserRoutes.js');
+
 // Routes
 const transactionRoutes = require('./config/models/controllers/routes/TransactionsRoutes.js');
 
+//app.use('/users', UserRoutes);
 app.use('/transactions', transactionRoutes);
 
 app.get('/', (req, res) => {
